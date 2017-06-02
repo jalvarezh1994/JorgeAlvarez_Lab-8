@@ -73,7 +73,7 @@ int main(int argc, char const *argv[]){
 			}
 			case 5:{
 				cout<<"Número 1:\t"<<b1<<endl;
-				cout<<"Número 2:\t"<<b2<<endl;
+				cout<<"Número 2:\t"<<b2<<endl<<"Resultado:\t";
 				int * resultado=new int[4];
 				resultado=(*b1)^(*b2);
 				for (int i = 0; i < 4; ++i){
