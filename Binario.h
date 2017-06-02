@@ -6,10 +6,11 @@ using namespace std;
 class Binario
 {
 	private:
-		int Arreglo[4];
+		int* Arreglo = new int[4];
 	public:
 		Binario();
+		~Binario();
 		void llenar();
 		int* getArreglo();
-		void setArreglo(int []);
+		int* operator
 };
