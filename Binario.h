@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <string>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ public:
 	~Binario();
 	void llenar();
 	int* getArreglo();
+	//Disyunción
 	int* operator +(Binario &b1){
 		int* resultado=new int[4];
 		for (int i = 0; i < 4; ++i){
@@ -23,6 +25,7 @@ public:
 		}
 		return resultado;
 	}
+	//Conjunción
 	int* operator -(Binario &b1){
 		int* resultado=new int[4];
 		for (int i = 0; i < 4; ++i){
@@ -34,6 +37,7 @@ public:
 		}
 		return resultado;
 	}
+	//Implicación
 	int* operator *(Binario &b1){
 		int* resultado=new int[4];
 		for (int i = 0; i < 4; ++i){
@@ -45,6 +49,7 @@ public:
 		}
 		return resultado;
 	}
+	//Doble implicación
 	int* operator /(Binario &b1){
 		int* resultado=new int[4];
 		for (int i = 0; i < 4; ++i){
@@ -56,6 +61,7 @@ public:
 		}
 		return resultado;
 	}
+	//Disyunción exclusiva
 	int* operator ^(Binario &b1){
 		int* resultado=new int[4];
 		for (int i = 0; i < 4; ++i){
@@ -66,5 +72,17 @@ public:
 			}
 		}
 		return resultado;
+	}
+	//Escritura
+	friend ostream& operator <<(ostream &escribir,Binario* binario){
+		string texto="";
+		//std::cout << "out";
+		for (int i = 0; i < 4; ++i){
+			//std::cout << "for in";
+			int b=binario -> getArreglo()[i];
+			texto+=to_string(b)+"\t";
+		}
+		escribir << texto;
+		return escribir;
 	}
 };
