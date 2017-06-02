@@ -97,8 +97,16 @@ int main(int argc, char const *argv[]){
 				cin>>pos1;
 				cout<<"Ingrese la posición del segundo binario: ";
 				cin>>pos2;
-				b1=Binarios[pos1];
-				b2=Binarios[pos2];
+				if (pos1>=0&&pos1<Binarios.size()){
+					b1=Binarios[pos1];
+				}else{
+					cout<<"Posición no válida"<<endl;
+				}
+				if (pos2>=0&&pos2<Binarios.size()){
+					b2=Binarios[pos2];
+				}else{
+					cout<<"Posición no válida"<<endl;
+				}
 			}
 			case 9:{
 				break;
